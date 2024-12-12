@@ -5,18 +5,20 @@ const root = document.documentElement;
 
 let is_light_mode = true;
 mode_switch.addEventListener("click", () => {
-  if (is_light_mode) {
+  if (is_light_mode) { // dark mode
     root.style.setProperty('--main-color', '#181818');
     root.style.setProperty('--text', '#ffffff');
     root.style.setProperty('--text-alt', '#0b0b0b');
     root.style.setProperty('--switch', '#ffffff');
+    root.style.setProperty('--nav-footer-color', '#2f2f2f');
     mode_switch.textContent = "Svetlý";
   }
-  else {
+  else { // light mode
     root.style.setProperty('--main-color', '#ebebeb');
     root.style.setProperty('--text', '#0b0b0b');
     root.style.setProperty('--text-alt', '#ffffff');
     root.style.setProperty('--switch', '#0b0b0b');
+    root.style.setProperty('--nav-footer-color', '#e0e0e0');
     mode_switch.textContent = "Tmavý";
   }
   is_light_mode = !is_light_mode;
