@@ -129,7 +129,10 @@ sup {
 }
 
 .hamburger {
+  width: 30px;
+  height: 30px;
   display: none;
+  cursor: pointer;
 }
 
 footer {
@@ -180,7 +183,6 @@ footer {
   color: #bbbbbb;
 }
 
-/* Podnadpis */
 .banner-subtitle {
   font-size: 1.2rem;
   margin-bottom: 20px;
@@ -191,16 +193,7 @@ footer {
   color: #ff6f61;
 }
 
-/* Obrázok v bannery */
-/* .banner-image {
-  flex: 1;
-  padding: 20px;
-  border: 2px solid #fff;
-  /* Okraj okolo obrázka */
-/* } */
-
 .banner-image {
-  /* position: relative; */
   width: 100vw;
   height: 600px;
 }
@@ -292,6 +285,176 @@ footer {
   opacity: 0.15;
 }
 
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  border-radius: 30px 0 30px 0;
+  background-color: var(--container-color);
+  margin: 20px;
+  padding: 20px;
+}
+
+.contact-section p {
+  color: var(--text2);
+}
+
+.contact-form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 30px 0 30px 0;
+  background-color: var(--container-color);
+}
+
+.contact-form {
+  width: 100%;
+  background-color: var(--card-color);
+  padding: 20px;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: var(--font-size-small);
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  background-color: var(--card-color);
+  color: var(--text);
+}
+
+.checkbox-label {
+  text-align: center;
+}
+
+#consent {
+  width: auto;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text2);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+
+.submit-btn {
+  background-color: var(--primary-button);
+  color: white;
+  font-size: var(--font-size-small);
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  align-self: center;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-us-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 30px 0 30px 0;
+  background-color: var(--container-color);
+}
+
+.about-us-section p {
+  color: var(--text2);
+}
+
+.courses-section {
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding-block: 20px;
+  padding-inline: 40px;
+  border-radius: 30px 0 30px 0;
+  background-color: var(--container-color);
+}
+
+.courses-section h2 {
+  margin-bottom: 40px;
+}
+
+.course-card {
+  width: 100%;
+  background-color: var(--card-color);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.course-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.course-info h3 {
+  font-size: var(--font-size-normal);
+}
+
+.course-price {
+  font-size: var(--font-size-small);
+  color: var(--text2);
+}
+
+.course-icon {
+  text-align: end;
+}
+
+.course-content {
+  padding: 20px;
+  display: none;
+  line-height: 1.6;
+}
+
+.course-card.active .course-content {
+  display: block;
+}
+
+.course-card.active .course-card-header {
+  background-color: var(--nav-footer-color);
+}
+
 .btn {
   width: 200px;
   height: 40px;
@@ -321,7 +484,8 @@ footer {
   font-size: var(--font-size-small);
 }
 
-.link-btn:hover {
+.link-btn:hover,
+.submit-btn:hover {
   box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
@@ -333,6 +497,7 @@ footer {
   border-radius: 15px;
   color: var(--text-alt);
   font-size: 16px;
+  margin-right: 20px;
 }
 
 .secondary {
@@ -340,8 +505,12 @@ footer {
   color: #0b0b0b;
 }
 
-/*tablet*/
+/*mobile*/
 @media only screen and (max-width: 800px) {
+  footer {
+    padding-inline: 30px;
+  }
+
   footer h2 {
     font-size: var(--font-size-xlarge);
   }
@@ -359,25 +528,51 @@ footer {
   .footer-links a {
     font-size: var(--font-size-large);
   }
-}
 
-/* mobile */
-@media only screen and (max-width: 576px) {
-  body {
-    background-color: green;
+  .contact-section {
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+
+  .contact-section p {
+    color: var(--text2);
+  }
+
+  .contact-form-section {
+    padding: 40px 5%;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--nav-footer-color);
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 200px;
+  }
+
+  .nav-links a {
+    margin: 10px 0;
   }
 
   .hamburger {
     display: block;
-    height: 25px;
   }
 
-  .nav-links {
+  .nav-links.active {
     display: flex;
-    flex-direction: column;
-    position: relative;
-    top: 0px;
-    background-color: var(--main-color);
   }
-
 }
